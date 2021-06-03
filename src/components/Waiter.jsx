@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Product from './Products';
+import OrderBreakFast from "./OrderBreakFast"
 import { NavLink } from "react-router-dom";
 import logoBq from "../img/logoBQ.png";
 import db from '../firebase/config'
@@ -54,6 +55,11 @@ const Waiter = () => {
                 }
               </section>
             </section>
+            <OrderBreakFast 
+            cart={cart}
+            setCart={setCart}
+            
+            />
           </Fragment>
         </section>
 
