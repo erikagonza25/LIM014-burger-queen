@@ -1,0 +1,118 @@
+
+{
+  "Breakfast": [
+      {
+        "id": 1,
+        "name": "Café Americano",
+        "img": "../img/expresso.png",
+        "price": "5$"
+      },
+      {
+        "id": 2,
+        "name": "Café con leche",
+        "img": "../img/latte.png",
+        "price": "7$"
+      },
+      {
+          "id": 3,
+          "name": "Sandwich jamón/queso",
+          "img": "../img/sandwich.png",
+          "price": "10$"
+      },
+      {
+          "id": 4,
+          "name": "Jugo de frutas natural",
+          "img": "../img/jugo.png",
+          "price": "7$"
+      }
+  ],
+
+  "Lunch": [
+      {
+          "id": 5,
+          "name": "Hamburguesa Simple de Res",
+          "img": "../img/hamburguesaSimple.png",
+          "price": "10$"
+      },
+      {
+        "id": 6,
+        "name": "Hamburguesa Simple de Pollo",
+        "img": "../img/hamburguesaPolloS.png",
+        "price": "10$"
+    },
+    {
+      "id": 7,
+      "name": "Hamburguesa Simple Vegetariana",
+      "img": "../img/hamburguesa-vegana.png",
+      "price": "10$"
+      },
+      {
+          "id": 8,
+          "name": "Hamburguesa Doble de Res",
+          "img": "../img/hamburguesaDoble.png",
+          "price": "15$"
+      },
+      {
+        "id": 9,
+        "name": "Hamburguesa Doble de Pollo",
+        "img": "../img/hamburguesaPolloD.png",
+        "price": "15$"
+    },
+    {
+      "id": 10,
+      "name": "Hamburguesa Doble Vegetariana",
+      "img": "../img/hamburguesa-doblevegana.png",
+      "price": "15$"
+    },
+      {
+          "id": 11,
+          "name": "Papas fritas",
+          "img": "../img/papasFritas.png",
+          "price": "5$"
+      },
+      {
+          "id": 12,
+          "name": "Aros de cebolla",
+          "img": "../img/arosCebolla.png",
+          "price": "5$"
+      },
+      {
+          "id": 13,
+          "name": "Agua mineral 500 ml",
+          "img": "../img/agua.png",
+          "price": "5$"
+      },
+      {
+        "id": 14,
+        "name": "Agua mineral 750 ml",
+        "img": "../img/agua.png",
+        "price": "7$"
+      },
+      {
+          "id": 15,
+          "name": "Gaseosa 500 ml",
+          "img": "../img/gaseosa.png",
+          "price": "7$"
+      },
+      {
+          "id": 16,
+          "name": "Gaseosa 750 ml",
+          "img": "../img/gaseosa.png",
+          "price": "10$"
+      }
+  ],
+  "Extra": [
+    {
+      "id":17,
+      "name": "Huevo",
+      "img": "../img/huevo.png",
+      "price": "1$"
+    },
+    {
+      "id":18,
+      "name": "Queso",
+      "img": "../img/queso.png",
+      "price": "1$"
+    }
+  ]
+}
