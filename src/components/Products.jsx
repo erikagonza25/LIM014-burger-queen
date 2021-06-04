@@ -1,31 +1,47 @@
 import React from "react";
-import Tachito from "../img/tachito.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const Product = ({ product, cart, setCart, Breakfast }) => {
+
+const Product = ({ product, cart, setCart, Products}) => {
   const { id, name, price } = product;
 
-const addBreakFast = id => {
-  const products = Breakfast.filter((product)=> product.id === id)
-  setCart([...cart, ...products])
+const addBreakFast = () => {
+  const exist = cart.find((x) => x.id === product.id);
+  if (exist) {
+    setCart(
+      cart.map((x) =>
+        x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+      )
+    );
+  } else {
+    setCart([...cart, { ...product, qty: 1 }]);
+  }
 }
 
-const deleteBreakFast = id =>{
-  const product = cart.filter(product => product.id !== id)
-  setCart(product)
+const deleteBreakFast = () =>{
+  const exist = cart.find((x) => x.id === product.id);
+    if (exist.qty === 1) {
+      setCart(cart.filter((x) => x.id !== product.id));
+    } else {
+      setCart(
+        cart.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+        )
+      );
+    }
 }
 
   return (
     <section className="cards">
       <ul>
-        <li>{id}</li>
         <li>{name}</li>
-        <li>${price}</li>
+        {Products ? (( <li>${price}</li>)) 
+      : (<></>)}
+        
       </ul>
-      <i>+</i>
-      <input type="number" />
-      <i>-</i>
-      {Breakfast ? (( <button type="button" onClick={() => addBreakFast(id)}>Agregar</button>)) 
-      : (<button type="button" onClick={() => deleteBreakFast(id)}><img src={Tachito} alt="logo" width="30px" /></button>)}
+      {Products ? (( <button type="button" onClick={() => addBreakFast(id)}>Agregar</button>)) 
+      : (<FontAwesomeIcon icon={faTrash} onClick={() => deleteBreakFast(id)} />)}
      
     </section>
   )
