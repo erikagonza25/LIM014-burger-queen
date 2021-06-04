@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./components/Home";
+import BreakFast from "./components/BreakFast";
+import Lunch from "./components/Lunch";
 import Chef from "./components/Chef";
 import ChefOrder from "./components/ChefOrder";
-import Waiter from "./components/Waiter";
 import WaiterOrder from "./components/WaiterOrder";
 import "./scss/app.scss";
 
@@ -23,11 +24,15 @@ function App() {
       </Route>
 
       <Route path="/waiter">
-        <Waiter />
+        <BreakFast />
       </Route>
 
       <Route path="/waiterOrder">
         <WaiterOrder />
+      </Route>
+
+      <Route path="/fuerte">
+        <Lunch />
       </Route>
     </BrowserRouter>
   );
