@@ -50,6 +50,7 @@ const Breakfast = () => {
                       cart={cart}
                       setCart={setCart}
                       Products={Products}
+                      img={product.idImg}
                     />
 
                   ))

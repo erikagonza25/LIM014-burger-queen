@@ -4,7 +4,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 const Product = ({ product, cart, setCart, Products}) => {
-  const { id, name, price } = product;
+  const { id, name, price, idImg } = product;
 
 const addBreakFast = () => {
   const exist = cart.find((x) => x.id === product.id);
@@ -35,6 +35,9 @@ const deleteBreakFast = () =>{
   return (
     <section className="cards">
       <ul>
+      {Products ? (( <img src={idImg} alt="coffe" width="50px" />)) 
+      : (<></>)}
+        
         <li>{name}</li>
         {Products ? (( <li>${price}</li>)) 
       : (<></>)}
