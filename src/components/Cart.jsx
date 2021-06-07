@@ -6,9 +6,9 @@ const Cart = ({ cart, setCart }) => {
   const itemsPrice = cart.reduce((a, c) => a + c.qty * c.price, 0);
 
   return (<div>
-    <h1>Carrito</h1>
+    <h1>Orden</h1>
     <form type='submit' action="">
-      <input type="text" />
+      <span>Cliente:</span><input className='input' type="text" />
       {cart.length === 0 ? (<p>Cart Is Empty</p>) : (cart.map((product => <div><Products key={product.id}
         product={product} cart={cart} setCart={setCart} /><div>{product.qty} x ${parseFloat(product.price).toFixed(2)}
         </div></div>)))}{cart.length !== 0 && (
@@ -25,8 +25,8 @@ const Cart = ({ cart, setCart }) => {
             <hr></hr>
           </>
         )}
-      <button>Cancelar</button>
-      <button>Enviar</button>
+      <button className='btnCancelar'>Cancelar</button>
+      <button className='btnEnviar'>Enviar</button>
     </form>
   </div>
 

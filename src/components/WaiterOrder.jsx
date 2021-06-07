@@ -1,9 +1,11 @@
+import React from "react";
+
 const WaiterOrder = () => {
   return (
-    <section className="App" >
+    <section>
       <h1>Hola WaiterOrder</h1>
     </section>
   );
-}
+};
 
 export default WaiterOrder;

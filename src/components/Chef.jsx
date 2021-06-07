@@ -1,9 +1,11 @@
+import React from "react";
+
 const Chef = () => {
   return (
-    <section className="App" >
+    <section>
       <h1>Hola Chef</h1>
     </section>
   );
-}
+};
 
 export default Chef;
