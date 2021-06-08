@@ -110,9 +110,8 @@ tr:hover {
 
 .grid-container {
   display: grid;
-  gap: 10px;
+  gap: 0px 10px;
   grid-template:
-    "header" 100px
     "navbar  ." 50px
     "main" auto
     "sidebar" 100px;
@@ -191,7 +190,7 @@ section.cards {
 @media (min-width: 600px) {
   .grid-container {
     grid-template:
-      "header  header" 100px
+      "header  header" 30px
       "navbar  ." 50px
       "main sidebar" auto /
       auto 500px;
