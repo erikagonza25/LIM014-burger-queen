@@ -42,9 +42,10 @@ const Breakfast = () => {
         <section>
           <Fragment >
             <section className="containerBox">
-              <section className="cards">
+            <section className="cards">
                 {
                   Products.map((product) => (
+                    
                     <Product
                       key={product.id}
                       product={product}
@@ -53,10 +54,10 @@ const Breakfast = () => {
                       Products={Products}
                       img={product.idImg}
                     />
-
+                  
                   ))
                 }
-              </section>
+             </section>
             </section>
           </Fragment>
         </section>

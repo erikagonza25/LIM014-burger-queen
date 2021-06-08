@@ -33,20 +33,17 @@ const deleteListProduct = () =>{
 }
 
   return (
-    <section className="cards">
-      <ul>
-      {Products ? (( <img src={idImg} alt="coffe" width="50px" />)) 
-      : (<></>)}
-        
-        <li>{name}</li>
-        {Products ? (( <li>${price}</li>)) 
-      : (<></>)}
-        
-      </ul>
-      {Products ? (( <button type="button" onClick={() => addListProduct(id)}>Agregar</button>)) 
-      : (<FontAwesomeIcon icon={faTrash} onClick={() => deleteListProduct(id)} />)}
-     
-    </section>
+    <div>
+      <div className="profile-content">
+        {Products ? ((<img src={idImg} alt="coffe" width="80px" />))
+          : (<></>)}
+        <div>{name}</div>
+        {Products ? ((<div>${price}</div>))
+          : (<></>)}
+      </div>
+      {Products ? ((<button className='btnAgregar' type="button" onClick={() => addListProduct(id)}>Agregar</button>))
+        : (<FontAwesomeIcon icon={faTrash} onClick={() => deleteListProduct(id)} />)}
+    </div>
   )
 };
 
