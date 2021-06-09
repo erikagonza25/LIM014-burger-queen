@@ -1,66 +1,64 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Product from './Products';
-import OrderBreakFast from "./Cart"
-import { NavLink } from "react-router-dom";
+import Cart from "./Cart"
 import db from '../firebase/config'
 
-const Breakfast = () => {
-  const [Products, setBreakfast] = useState([]);
+const Menu = () => {
+  const [Menu, setMenu] = useState([]);
+  const [Type, setType] = useState('breakfast');
+
   useEffect(() => {
-    db.collection('Breakfast')
-      .onSnapshot(snap => {
+    db.collection('products')
+      .get().then(snap => {
         const documents = [];
         snap.forEach(doc => {
           documents.push({ id: doc.id, ...doc.data() })
         });
-        setBreakfast(documents);
+        setMenu(documents.filter(doc => doc.type === Type));
       })
-  }, [Products])
-  
+  }, [Type])
+
 
   const [cart, setCart] = useState([])
 
   return (
     <body className="grid-container">
       <nav className="navbar">
-            <ul>
-            <li><NavLink to="/waiter">Desayuno</NavLink></li>
-            <li><NavLink to="/fuerte">Fuerte</NavLink></li>
-            </ul>
-          </nav>
+          <button className="btnBreakFast" onClick={() => { setType('breakfast'); }}>Desayuno</button>
+          <button className="btnLuch" onClick={() => { setType('lunch'); }}>Fuerte</button>
+      </nav>
       <main className="main">
         <section>
           <Fragment >
             <section className="containerBox">
-            <section className="cards">
+              <section className="cards">
                 {
-                  Products.map((product) => (
-                    
+                  Menu.filter(product => product.type === Type).map((product) => (
+
                     <Product
                       key={product.id}
                       product={product}
                       cart={cart}
                       setCart={setCart}
-                      Products={Products}
-                      img={product.idImg}
+                      Products={Menu}
+                      img={product.img}
                     />
-                  
+
                   ))
                 }
-             </section>
+              </section>
             </section>
           </Fragment>
         </section>
       </main>
       <aside className="sidebar">
-      <OrderBreakFast 
-            cart={cart}
-            setCart={setCart}
-            
-            />
-            </aside>
+        <Cart
+          cart={cart}
+          setCart={setCart}
+        />
+      </aside>
     </body>
   );
 };
 
-export default Breakfast;
+export default Menu;
