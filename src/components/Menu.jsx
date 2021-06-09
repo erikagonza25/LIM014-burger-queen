@@ -1,62 +1,54 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Product from './Products';
 import OrderBreakFast from "./Cart"
-import { NavLink } from "react-router-dom";
 import db from '../firebase/config'
 
-const Breakfast = () => {
-  const [Products, setBreakfast] = useState([]);
+const Menu = () => {
+  const [Products, setMenu] = useState([]);
+  const [Type, setType] = useState('breakfast');
+
   useEffect(() => {
-    db.collection('Breakfast')
+    db.collection('products')
       .onSnapshot(snap => {
         const documents = [];
         snap.forEach(doc => {
-          documents.push({ id: doc.id, ...doc.data() })
+            documents.push({ id: doc.id, ...doc.data() })
         });
-        setBreakfast(documents);
+        setMenu(documents.filter(doc => doc.type === Type));
       })
-  }, [Products])
+  }, [Products, Type])
   
 
   const [cart, setCart] = useState([])
 
   return (
     <body className="grid-container">
-      <header className="header">
-        <img src="./img/logoBQ.png"alt="Logo" width="120px"/>
-        <nav className="navHeader">
-          <ul>
-            <li><NavLink to="/">Inicio</NavLink></li>
-            <li><NavLink to="/waiter">Nueva Orden</NavLink></li>
-            <li><NavLink to="/waiterOrder">Ordenes por entregar</NavLink></li> 
-          </ul>
-        </nav>
-      </header>
       <nav className="navbar">
             <ul>
-            <li><NavLink to="/waiter">Desayuno</NavLink></li>
-            <li><NavLink to="/fuerte">Fuerte</NavLink></li>
+            <li onClick={() => { setType('breakfast');}}>Desayuno</li>
+            <li onClick={() => { setType('lunch'); }}>Fuerte</li>
             </ul>
           </nav>
       <main className="main">
         <section>
           <Fragment >
             <section className="containerBox">
-              <section className="cards">
+            <section className="cards">
                 {
-                  Products.map((product) => (
+                  Products.filter(product => product.type === Type).map((product) => (
+                    
                     <Product
                       key={product.id}
                       product={product}
                       cart={cart}
                       setCart={setCart}
                       Products={Products}
-                      img={product.idImg}
+                      img={product.img}
                     />
-
+                  
                   ))
                 }
-              </section>
+             </section>
             </section>
           </Fragment>
         </section>
@@ -72,4 +64,4 @@ const Breakfast = () => {
   );
 };
 
-export default Breakfast;
+export default Menu;

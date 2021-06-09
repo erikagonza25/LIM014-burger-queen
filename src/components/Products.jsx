@@ -4,14 +4,14 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 const Product = ({ product, cart, setCart, Products}) => {
-  const { id, name, price, idImg } = product;
+  const { id, name, price, img} = product;
 
 const addListProduct = () => {
-  const exist = cart.find((x) => x.id === product.id);
+  const exist = cart.find((products) => products.id === product.id);
   if (exist) {
     setCart(
-      cart.map((x) =>
-        x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+      cart.map((products) =>
+        products.id === product.id ? { ...exist, qty: exist.qty + 1 } : products
       )
     );
   } else {
@@ -20,33 +20,30 @@ const addListProduct = () => {
 }
 
 const deleteListProduct = () =>{
-  const exist = cart.find((x) => x.id === product.id);
+  const exist = cart.find((products) => products.id === product.id);
     if (exist.qty === 1) {
-      setCart(cart.filter((x) => x.id !== product.id));
+      setCart(cart.filter((products) => products.id !== product.id));
     } else {
       setCart(
-        cart.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+        cart.map((products) =>
+          products.id === product.id ? { ...exist, qty: exist.qty - 1 } : products
         )
       );
     }
 }
 
   return (
-    <section className="cards">
-      <ul>
-      {Products ? (( <img src={idImg} alt="coffe" width="50px" />)) 
-      : (<></>)}
-        
-        <li>{name}</li>
-        {Products ? (( <li>${price}</li>)) 
-      : (<></>)}
-        
-      </ul>
-      {Products ? (( <button type="button" onClick={() => addListProduct(id)}>Agregar</button>)) 
-      : (<FontAwesomeIcon icon={faTrash} onClick={() => deleteListProduct(id)} />)}
-     
-    </section>
+    <div>
+      <div className="profile-content">
+        {Products ? ((<img src={img} alt="coffe" width="80px" />))
+          : (<></>)}
+        <div>{name}</div>
+        {Products ? ((<div>${price}</div>))
+          : (<></>)}
+      </div>
+      {Products ? ((<button className='btnAgregar' type="button" onClick={() => addListProduct(id)}>Agregar</button>))
+        : (<FontAwesomeIcon icon={faTrash} onClick={() => deleteListProduct(id)} />)}
+    </div>
   )
 };
 
