@@ -1,0 +1,33 @@
+$colorBackground: #b79d6f50;
+$colorButton: #6d422d;
+body {
+  background: $colorBackground;
+}
+.App {
+  text-align: center;
+}
+.logo {
+  height: 100px;
+}
+.containerHome {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.marginHome {
+  display: inline-block;
+  position: relative;
+  padding: 2px;
+}
+
+.buttonHome {
+  position: absolute;
+  margin-top: 120%;
+  right: 0em;
+  background-color: $colorButton;
+  border-radius: 1.5em;
+  color: white;
+  text-transform: uppercase;
+  padding: 1em 1.5em;
+}
