@@ -1,26 +1,29 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
+import db from "../firebase/config";
+import ChefOrder from "./ChefOrder";
+
 const Chef = () => {
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    db.collection("orders")
+      .get()
+      .then((snap) => {
+        const documents = [];
+
+        snap.forEach((doc) => {
+          documents.push({ id: doc.id, ...doc.data() });
+        });
+        setOrders(documents.filter((doc) => doc.status === "pending"));
+        console.log(documents);
+      });
+  }, []);
+
   return (
     <section>
-      <h1>Cliente</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Cantidad</th>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Eliminar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td> 1 </td>
-            <td>cafe</td>
-            <td> $5</td>
-          </tr>
-        </tbody>
-      </table>
-      <hr></hr>
+      {orders.map((order) => (
+        <ChefOrder key={order.id} order={order} />
+      ))}
     </section>
   );
 };

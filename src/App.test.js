@@ -1,14 +1,9 @@
-import React from "react";
-import "@testing-library/jest-dom/extend-expect";
-import { render } from "@testing-library/react";
-import Cart from "./components/Cart";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './routes/App';
 
-test("render Cart", () => {
-  const prueba = {
-    content: "This is a test",
-    important: true,
-  };
-
-  const component = render(<Cart prueba={prueba} />);
-  console.log(component);
+it('Render para App', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+  ReactDOM.unmountComponentAtNode(div);
 });

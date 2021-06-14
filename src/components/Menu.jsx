@@ -22,7 +22,7 @@ const Menu = () => {
   const [cart, setCart] = useState([])
 
   return (
-    <body className="grid-container">
+    <section className="grid-container">
       <nav className="navbar">
         <button className="btnBreakFast" onClick={() => { setType('breakfast'); }}>Desayuno</button>
         <button className="btnLuch" onClick={() => { setType('lunch'); }}>Fuerte</button>
@@ -34,7 +34,6 @@ const Menu = () => {
               <section className="cards">
                 {
                   Menu.filter(product => product.type === Type).map((product) => (
-
                     <Product
                       key={product.id}
                       product={product}
@@ -43,7 +42,6 @@ const Menu = () => {
                       Products={Menu}
                       img={product.img}
                     />
-
                   ))
                 }
               </section>
@@ -52,12 +50,14 @@ const Menu = () => {
         </section>
       </main>
       <aside className="sidebar">
-        <Cart
-          cart={cart}
-          setCart={setCart}
-        />
+        <section className='aside'>
+          <Cart
+            cart={cart}
+            setCart={setCart}
+          />
+        </section>
       </aside>
-    </body>
+    </section>
   );
 };
 
