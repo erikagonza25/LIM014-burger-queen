@@ -16,6 +16,7 @@ img.btn {
 }
 
 p {
+  margin-top: 5%;
   text-align: center;
 }
 
@@ -52,6 +53,19 @@ body {
   padding: 0.5em 2em;
 }
 .buttonHome:hover {
+  background: #bda274;
+}
+.btnExit{
+  margin-top: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #000000;
+  border-radius: 1.5em;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5em 2em;
+}
+.btnExit:hover {
   background: #bda274;
 }
 

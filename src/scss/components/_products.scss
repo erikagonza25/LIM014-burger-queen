@@ -1,6 +1,10 @@
 .containerCards{
   padding: 15px;
 }
+.cardsContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .contentCards {
 	background-color: #6d422d96;
