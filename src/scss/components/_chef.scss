@@ -30,6 +30,7 @@
 h5{
   text-align: center;
   font-weight: bold;
+  font-size: 20px;
 }
 h6{
   border-radius: 4px;
@@ -56,14 +57,13 @@ h6{
   outline: 0;
 }
 .temporize{
-  margin-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* .cards{
-  columns: 2;
-} */
+.time{
+  margin-top: 4%;
+}
 @media screen and (max-width: 480px) {
 
 	.cards{

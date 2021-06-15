@@ -2,7 +2,7 @@ import React from "react";
 import db from "../firebase/config";
 
 const ChefOrder = ({ order }) => {
-  const { id, name, products } = order;
+  const { id, name, products, order_time } = order;
 
   async function finish(evt) {
     evt.preventDefault();
@@ -39,6 +39,10 @@ const ChefOrder = ({ order }) => {
         </table>
         <hr></hr>
         <section>
+          <section className="time">
+            <span>Tiempo de preparación:</span>
+            <span>{order_time}</span>
+          </section>
           <section className="temporize">
             <button onClick={finish} className="btnStop" title="prueba">
               Entregado
