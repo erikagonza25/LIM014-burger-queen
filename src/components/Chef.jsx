@@ -24,6 +24,7 @@ const Chef = () => {
       {orders.map((order) => (
         <ChefOrder key={order.id} order={order} />
       ))}
+      <p><a href="/" className="buttonHome">Exit</a></p>
     </section>
   );
 };
