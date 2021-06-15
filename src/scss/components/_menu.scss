@@ -1,0 +1,23 @@
+.navbar {
+  grid-area: navbar;
+  margin-top: 20px;
+}
+.navbar button {
+  padding: 7px 30px;
+  color: white;
+  border-radius: 10px 10px 0px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.btnBreakFast {
+  background: #6d422d;
+}
+.btnLuch {
+  background-color: #56493f;
+}
+.btnBreakFast:hover {
+  background: #bda274;
+}
+.btnLuch:hover {
+  background: #bda274;
+}

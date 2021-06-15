@@ -1,0 +1,71 @@
+.logoBQ{
+  width: 100%;
+}
+img.btn {
+  margin-bottom: 10%;
+  padding: 15px;
+}
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  padding: 50px 30px;
+  border-radius: 10px;
+}
+
+p {
+  margin-top: 5%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  opacity: .7;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+.responsive {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+$colorBackground: #b79d6f50;
+$colorButton: #6d422d;
+body {
+  background: $colorBackground;
+}
+
+.buttonHome {
+  margin-top: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #6d422d;
+  border-radius: 1.5em;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5em 2em;
+}
+.buttonHome:hover {
+  background: #bda274;
+}
+.btnExit{
+  margin-top: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #000000;
+  border-radius: 1.5em;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5em 2em;
+}
+.btnExit:hover {
+  background: #bda274;
+}
+
