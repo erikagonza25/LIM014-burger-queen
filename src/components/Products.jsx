@@ -19,10 +19,8 @@ const Products = ({ product, cart, setCart, Products }) => {
   return (
     <section className="containerCards">
       <div className="contentCards">
-        <div className="previewCards">
-          {Products ? ((<img src={img} alt="coffe" width="80px" />))
-            : (<></>)}
-        </div>
+        {Products ? ((<div className="previewCards"><img src={img} alt="coffe" width="80px" /></div>))
+          : (<></>)}
         <div className="infoCards">
           <section>{name}</section>
           {Products ? ((<section>${price}</section>))

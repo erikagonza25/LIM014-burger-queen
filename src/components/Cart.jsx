@@ -82,7 +82,7 @@ const Cart = ({ cart, setCart }) => {
                     </li>
                     <li className='li'> ${product.price}</li>
                     <li className='li'>
-                      <FontAwesomeIcon
+                      <FontAwesomeIcon className="iconTrash"
                         icon={faTrash}
                         onClick={() => deleteListProduct(product.id)}
                       />

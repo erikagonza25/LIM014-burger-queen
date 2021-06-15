@@ -21,10 +21,12 @@ const Chef = () => {
 
   return (
     <section>
-      {orders.map((order) => (
-        <ChefOrder key={order.id} order={order} />
-      ))}
-      <p><a href="/" className="buttonHome">Exit</a></p>
+      <section className="cardsContainer">
+        {orders.map((order) => (
+          <ChefOrder key={order.id} order={order} />
+        ))}
+      </section>
+      <p><a href="/" className="btnExit">Exit</a></p>
     </section>
   );
 };
