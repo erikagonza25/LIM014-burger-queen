@@ -1,10 +1,17 @@
+
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import ImageProject from "./Image"
 
 const Header = () => {
+  const img = [
+    { id: "logo" },
+  ]
   return (
     <header className="header">
-      <img src="./img/logoBQ.png" alt="Logo" width="120px" />
+      {img.map((image) => {
+        return <ImageProject key={image} nombre={image.id} />
+      })}
       <nav className="navHeader">
         <ul>
           <li><NavLink to="/" exact={true}>Inicio</NavLink></li>

@@ -1,19 +1,21 @@
 import React from "react";
-/* import { NavLink } from "react-router-dom"; */
 import "../css/App.css";
+import Mozo from "./logos/mozo";
+import Cocina from "./logos/cocina";
+import Icon from "./logos/logo"
 
 const Home = () => {
   return (
     <div>
       <div className="form-container">
-        <img className='logoBQ' src="./img/logoBQ.png" alt="logo" width='100%' />
+        <Icon className="logoBQ" />
         <form className="responsive">
           <div className="control">
-            <img className="btn" src="./img/mozo.png" alt="logo" width='100%' />
+            <Mozo />
             <p><a href="/waiter" className="buttonHome">Mozo</a></p>
           </div>
           <div className="control">
-            <img className="btn" src="./img/cocina.png" alt="logo" width='100%' />
+            <Cocina />
             <p><a href="/chef" className="buttonHome">Chef</a></p>
           </div>
         </form>
